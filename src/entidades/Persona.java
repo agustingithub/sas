@@ -12,22 +12,7 @@ import java.sql.ResultSet;
 
 public class Persona {
     ConexionBase conexion;
-
-    public Persona(int dni, String apellido, String nombre, String direccion,int cp, int telefono, String email, Date fechanac, int sexo, String barrio, int cel, int nrodireccion) {
-        
-        this.dni = dni;
-        this.apellido = apellido;
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.cp = cp;
-        this.telefono = telefono;
-        this.email = email;
-        this.fechanac = fechanac;
-        this.sexo = sexo;
-        this.barrio = barrio;
-        this.cel = cel;
-        this.nrodireccion = nrodireccion;
-    }
+    
     private int idpersona;
     private int dni;
     private int telefono;
@@ -41,6 +26,111 @@ public class Persona {
     private String barrio;
     private int cel;
     private int nrodireccion;
+    private int cuil;
+    private String nacionalidad;
+    private String ednia;
+    private String compania;
+    private String estado;
+    private int idlocalidad;
+
+    public Persona() {
+    }
+        public Persona(ConexionBase conexion, int idpersona, int dni, int telefono, String apellido, String nombre, String direccion, int cp, String email, Date fechanac, int sexo, String barrio, int cel, int nrodireccion, int cuil, String nacionalidad, String ednia, String compania, String estado, int idlocalidad) {
+        
+        this.conexion = conexion;
+        this.idpersona = idpersona;
+        this.dni = dni;
+        this.telefono = telefono;
+        this.apellido = apellido;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.cp = cp;
+        this.email = email;
+        this.fechanac = fechanac;
+        this.sexo = sexo;
+        this.barrio = barrio;
+        this.cel = cel;
+        this.nrodireccion = nrodireccion;
+        this.cuil = cuil;
+        this.nacionalidad = nacionalidad;
+        this.ednia = ednia;
+        this.compania = compania;
+        this.estado = estado;
+        this.idlocalidad = idlocalidad;
+    }
+
+    public ConexionBase getConexion() {
+        return conexion;
+    }
+
+    public void setConexion(ConexionBase conexion) {
+        this.conexion = conexion;
+    }
+
+    public int getCp() {
+        return cp;
+    }
+
+    public void setCp(int cp) {
+        this.cp = cp;
+    }
+
+    public int getNrodireccion() {
+        return nrodireccion;
+    }
+
+    public void setNrodireccion(int nrodireccion) {
+        this.nrodireccion = nrodireccion;
+    }
+
+    public int getCuil() {
+        return cuil;
+    }
+
+    public void setCuil(int cuil) {
+        this.cuil = cuil;
+    }
+
+    public String getNacionalidad() {
+        return nacionalidad;
+    }
+
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
+    }
+
+    public String getEdnia() {
+        return ednia;
+    }
+
+    public void setEdnia(String ednia) {
+        this.ednia = ednia;
+    }
+
+    public String getCompania() {
+        return compania;
+    }
+
+    public void setCompania(String compania) {
+        this.compania = compania;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public int getIdlocalidad() {
+        return idlocalidad;
+    }
+
+    public void setIdlocalidad(int idlocalidad) {
+        this.idlocalidad = idlocalidad;
+    }
+    
 
     public int getIdpersona() {
         return idpersona;
@@ -135,6 +225,7 @@ public class Persona {
     public void getNrodireccion(int nrodireccion){
         this.nrodireccion = nrodireccion;
     }
+    
     public void CargarPersona(){
         try {
             conexion = new ConexionBase();
